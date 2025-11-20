@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="flex flex-col bg-gray-900 text-gray-300">
+    <div className="flex flex-col bg-gray-900 text-gray-300 h-screen">
       <Navbar />
       <MainLayout />
       <Footer />
