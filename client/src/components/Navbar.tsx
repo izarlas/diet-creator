@@ -1,4 +1,4 @@
-import UserIcon from "./UserIcon";
+import UserIcon from "./icons/UserIcon";
 
 const Navbar = () => {
   return (
