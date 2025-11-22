@@ -1,4 +1,6 @@
-module.exports = {
+import type { Config } from 'jest';
+
+const config: Config = {
   moduleFileExtensions: ['js', 'json', 'ts'],
   rootDir: '.',
   transform: {
@@ -13,3 +15,5 @@ module.exports = {
   testEnvironment: 'node',
   setupFiles: ['<rootDir>/test/setup.ts'],
 };
+
+export default config;
