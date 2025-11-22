@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { OpenaiController } from './openai.controller';
-import { OpenaiService } from './openai.service';
-import { SendPromptDto } from './dto/send-prompt.dto';
+import { OpenaiController } from '../../src/openai/openai.controller';
+import { OpenaiService } from '../../src/openai/openai.service';
+import { SendPromptDto } from '../../src/openai/dto/send-prompt.dto';
 
 describe('OpenaiController', () => {
   let openaiController: OpenaiController;
@@ -27,3 +27,6 @@ describe('OpenaiController', () => {
     });
   });
 });
+
+// TODO write integration and unit tests for the API - using super test. Add coverage, do frontend integration
+// split the tests in directories better

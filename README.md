@@ -12,6 +12,18 @@ This is a React TypeScript and NestJs application that aims to enable creating d
 
 While the server is running, the swagger ui/openapi specification is available at `http://localhost:3000/api-docs`
 
+## Testing
+
+### Client
+
+### Server
+
+- To run the server side tests:
+  - Run all server side tests `npm run test`
+  - For unit tests run `npm run test:unit` or with coverage `npm run test:unit:coverage`
+  - For integration tests run `npm run test:integration` or with coverage `npm run test:integration:coverage`
+  - For e2e tests run `npm run test:e2e` or with coverage `npm run test:e2e:coverage`
+
 ## License
 
 All rights reserved.
