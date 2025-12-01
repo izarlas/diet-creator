@@ -6,9 +6,12 @@ import ChatDiscussionMessage from './ChatDiscussionMessage';
 const ChatDiscussion = () => {
   const { messages } = useChat();
 
-  const renderChat = messages.map((message: MessageType, idx: number) => {
+  const renderChat = messages.map((message: MessageType, index: number) => {
     return (
-      <div key={idx}>
+      <div
+        className="border p-3 rounded-lg mb-2 border-gray-700 bg-gray-900"
+        key={index}
+      >
         {message?.type && <ChatDiscussionHeader title={message.type} />}
         {message?.message && <ChatDiscussionMessage text={message.message} />}
       </div>
