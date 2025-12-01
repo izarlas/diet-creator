@@ -4,7 +4,7 @@ import { SendPromptDto } from './dto/send-prompt.dto';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 
 @ApiTags('Chat')
-@Controller('chat')
+@Controller('/api/chat')
 export class OpenaiController {
   constructor(private readonly openaiService: OpenaiService) {}
 

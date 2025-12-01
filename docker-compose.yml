@@ -6,6 +6,10 @@ services:
     volumes:
       - ./client:/app:delegated
       - /app/node_modules
+    environment:
+      - VITE_API_URL=http://server:3000
+    depends_on:
+      - server
     command: npm run start
 
   server:

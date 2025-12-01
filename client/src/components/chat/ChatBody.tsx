@@ -1,18 +1,22 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { sendPrompt } from '../../utils/openai';
 
 const ChatBody = () => {
-  const [textAreaText, setTextAreaText] = useState("");
+  const [textAreaText, setTextAreaText] = useState('');
 
   const handleSubmit = async (event: React.FormEvent) => {
     if (!textAreaText.trim()) return;
 
     event.preventDefault();
 
-    console.log("Submitted!!!");
+    console.log('!!!Submitted!!!', textAreaText);
+    const promptResponse = await sendPrompt(textAreaText);
+
+    console.log('====response====>', promptResponse);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
-    if (event.key === "Enter" && !event.shiftKey) {
+    if (event.key === 'Enter' && !event.shiftKey) {
       event.preventDefault();
       handleSubmit(event);
     }
