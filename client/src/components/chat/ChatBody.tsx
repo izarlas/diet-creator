@@ -1,18 +1,21 @@
 import { useState } from 'react';
 import { sendPrompt } from '../../utils/openai';
+import { MessageEnum } from '../../enums/MessageEnum';
+import { useChat } from '../../context/ChatContext';
 
 const ChatBody = () => {
   const [textAreaText, setTextAreaText] = useState('');
+  const { addMessage } = useChat();
 
   const handleSubmit = async (event: React.FormEvent) => {
     if (!textAreaText.trim()) return;
 
     event.preventDefault();
 
-    console.log('!!!Submitted!!!', textAreaText);
+    addMessage({ type: MessageEnum.QUESTION, message: textAreaText });
+    setTextAreaText('');
     const promptResponse = await sendPrompt(textAreaText);
-
-    console.log('====response====>', promptResponse);
+    addMessage({ type: MessageEnum.ANSWER, message: promptResponse });
   };
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
