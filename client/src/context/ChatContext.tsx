@@ -4,6 +4,7 @@ import type { MessageType } from '../types/MessageType';
 type ChatContextType = {
   messages: MessageType[];
   addMessage: (message: MessageType) => void;
+  clearMessages: () => void;
 };
 
 const ChatContext = createContext<ChatContextType | undefined>(undefined);
@@ -15,8 +16,12 @@ export const ChatProvider = ({ children }: { children: React.ReactNode }) => {
     setMessages((existingMessages) => [...existingMessages, message]);
   };
 
+  const clearMessages = () => {
+    setMessages([]);
+  };
+
   return (
-    <ChatContext.Provider value={{ messages, addMessage }}>
+    <ChatContext.Provider value={{ messages, addMessage, clearMessages }}>
       {children}
     </ChatContext.Provider>
   );

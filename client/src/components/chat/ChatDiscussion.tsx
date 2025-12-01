@@ -1,5 +1,6 @@
 import { useChat } from '../../context/ChatContext';
 import type { MessageType } from '../../types/MessageType';
+import ChatContainerHeader from './ChatContainerHeader';
 import ChatDiscussionHeader from './ChatDiscussionHeader';
 import ChatDiscussionMessage from './ChatDiscussionMessage';
 
@@ -19,10 +20,9 @@ const ChatDiscussion = () => {
   });
 
   return (
+    // TODO - Ensure the discussion containers max size fits the screen and does not push the chat input
     <div className="flex flex-col border-0 h-full mb-2">
-      <div className="text-xl pb-2 pl-2 flex-0">
-        {messages.length === 0 && <span>Start your diet journey here...</span>}
-      </div>
+      <ChatContainerHeader />
       <div
         className="
         flex-1
