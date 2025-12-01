@@ -16,7 +16,7 @@ describe('OpenaiController', () => {
   });
 
   describe('sendPrompt', () => {
-    it('sendPrompt returns response', async () => {
+    it('returns content from OpenAI', async () => {
       const sendPromptDto: SendPromptDto = {
         prompt: 'Hello ChatGPT!',
       };
@@ -27,6 +27,3 @@ describe('OpenaiController', () => {
     });
   });
 });
-
-// TODO write integration and unit tests for the API - using super test. Add coverage, do frontend integration
-// split the tests in directories better
