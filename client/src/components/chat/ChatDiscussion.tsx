@@ -19,19 +19,21 @@ const ChatDiscussion = () => {
   });
 
   return (
-    <div
-      className="
+    <div className="flex flex-col border-0 h-full mb-2">
+      <div className="text-xl pb-2 pl-2 flex-0">
+        {messages.length === 0 && <span>Start your diet journey here...</span>}
+      </div>
+      <div
+        className="
         flex-1
-        border-2
         border-gray-700
         bg-gray-800
         rounded-lg
         w-full
-        p-2
-        mb-4
       "
-    >
-      {renderChat}
+      >
+        {renderChat}
+      </div>
     </div>
   );
 };

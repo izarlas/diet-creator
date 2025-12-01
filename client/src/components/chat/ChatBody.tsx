@@ -39,10 +39,11 @@ const ChatBody = () => {
           focus:ring-0
         focus:border-gray-700
           p-2
+          shrink-0
         "
       value={textAreaText}
       onChange={(event) => setTextAreaText(event.target.value)}
-      placeholder="Start your diet journey here..."
+      placeholder="Ask the diet doctor..."
       onKeyDown={handleKeyDown}
     />
   );
