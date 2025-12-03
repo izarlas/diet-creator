@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import Button from '../Button';
 import type { SignInForm } from '../../types/SignInForm';
+import FormField from '../form/FormField';
+import type { InputFieldType } from '../../types/InputFieldType';
 
 const SignIn = () => {
   const [formFields, setFormFields] = useState<Partial<SignInForm>>({});
+  const formStyles: string = 'flex flex-col items-center justify-center';
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -18,41 +20,36 @@ const SignIn = () => {
       ...formFields,
       [event.target.name]: event.target.value,
     });
-
-    console.log('==form fields===>', formFields);
   };
 
+  const inputFields: InputFieldType[] = [
+    {
+      label: 'Username',
+      name: 'username',
+      type: 'text',
+      value: formFields.username ?? '',
+      required: true,
+      styles: 'border',
+      onChange: handleChange,
+    },
+    {
+      label: 'Password',
+      name: 'password',
+      type: 'password',
+      value: formFields.password ?? '',
+      required: true,
+      styles: 'border',
+      onChange: handleChange,
+    },
+  ];
+
   return (
-    <form
+    <FormField
+      styles={formStyles}
+      buttonLabel={'Sign in'}
+      inputFields={inputFields}
       onSubmit={handleSubmit}
-      className="flex flex-col items-center justify-center"
-    >
-      <div className="flex w-full mb-4 justify-between">
-        Username{' '}
-        <input
-          name="username"
-          type="text"
-          value={formFields.username ?? ''}
-          required
-          className="border"
-          onChange={handleChange}
-        />
-      </div>
-
-      <div className="flex w-full mb-4 justify-between">
-        Password{' '}
-        <input
-          name="password"
-          type="password"
-          value={formFields.password ?? ''}
-          required
-          className="border"
-          onChange={handleChange}
-        />
-      </div>
-
-      <Button name={'Sign in'} handleClick={handleSubmit} />
-    </form>
+    />
   );
 };
 

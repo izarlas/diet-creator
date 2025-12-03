@@ -31,7 +31,17 @@ const Modal = ({ toggleModal }: ModalProps) => {
               </div>
             </div>
           )}
-          {!isRegistered && <SignUp />}
+          {!isRegistered && (
+            <div className="flex flex-col w-2/3">
+              <SignUp />
+              <div
+                className="flex justify-center pt-6 text-sm hover:text-red-500 cursor-pointer hover:underline"
+                onClick={() => setRegisteredState(!isRegistered)}
+              >
+                Already registered? Click to sign in your account
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
