@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { SignInForm } from '../../types/SignInForm';
+import type { SignInForm } from '../../interfaces/SignInForm';
 import FormField from '../form/FormField';
 import type { InputFieldType } from '../../types/InputFieldType';
 

@@ -1,4 +1,4 @@
-export type SignInForm = {
+export interface SignInForm {
   username: string;
   password: string;
-};
+}
