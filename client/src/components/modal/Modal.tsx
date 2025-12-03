@@ -11,24 +11,24 @@ const Modal = ({ toggleModal }: ModalProps) => {
   const [isRegistered, setRegisteredState] = useState<boolean>(true);
 
   return (
-    <div className="flex justify-center items-center absolute w-auto top-0 bottom-0 right-0 left-0 bg-gray-800/50">
-      <div className="flex flex-col items-center p-4 border rounded-lg w-4xl h-1/2 bg-sky-900/30 border-sky-700/50">
+    <div className="fixed inset-0 flex items-center justify-center bg-black/40">
+      <div className="flex flex-col items-center p-4 border rounded-lg w-4xl h-2/5 bg-gray-900/50 border-gray-700/70">
         <div
           className="flex justify-end w-full cursor-pointer"
           onClick={toggleModal}
         >
           <XIcon />
         </div>
-        <div className="text-center">
+        <div className="flex justify-center w-1/2 h-full items-center">
           {isRegistered && (
-            <div>
+            <div className="flex flex-col w-2/3">
               <SignIn />
-              <span
-                className="text-sm hover:text-red-500 cursor-pointer hover:underline"
+              <div
+                className="flex justify-center pt-6 text-sm hover:text-red-500 cursor-pointer hover:underline"
                 onClick={() => setRegisteredState(!isRegistered)}
               >
                 Not registered? Click to create your account
-              </span>
+              </div>
             </div>
           )}
           {!isRegistered && <SignUp />}
