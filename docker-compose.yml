@@ -18,7 +18,24 @@ services:
       - "3000:3000"
     env_file:
       - server/.env
+    depends_on:
+      - postgresdb
     volumes:
       - ./server:/app
       - /app/node_modules
     command: npm run start
+
+  postgresdb:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgresdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
