@@ -6,8 +6,7 @@ import Modal from './components/modal/Modal';
 import Navbar from './components/Navbar';
 
 function App() {
-  // const [isOpen, setModalState] = useState<boolean>(false);
-  const [isOpen, setModalState] = useState<boolean>(true);
+  const [isOpen, setModalState] = useState<boolean>(false);
 
   const handleModalState = () => {
     setModalState(!isOpen);

@@ -1,4 +1,4 @@
-import { firstCharacterToUpperCase } from '../../utils/textTransformation';
+import { firstCharacterToUpperCase } from '../../utils/text-transformation';
 
 interface ChatDiscussionHeaderProps {
   title: string;
