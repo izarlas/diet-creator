@@ -1,9 +1,11 @@
+import ReactMarkdown from 'react-markdown';
+
 interface ChatDiscussionMessageProps {
   text: string;
 }
 
 const ChatDiscussionMessage = ({ text }: ChatDiscussionMessageProps) => {
-  return <div>{text}</div>;
+  return <ReactMarkdown>{text}</ReactMarkdown>;
 };
 
 export default ChatDiscussionMessage;
